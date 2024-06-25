@@ -1,0 +1,22 @@
+:host {
+  min-width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.responsive-card {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-card {
+    padding: 10px;
+  }
+}

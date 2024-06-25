@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="title-container">
+    <h1>Nossos produtos</h1>
+    <app-category-filter
+      [products]="products"
+      (productsChange)="filteredProducts = $event"
+    ></app-category-filter>
+  </div>
+
+  <div class="card-container">
+    <app-product-card
+      [product]="product"
+      *ngFor="let product of filteredProducts"
+    ></app-product-card>
+  </div>
+
+  <div class="pagination-controls">
+    <button
+      pButton
+      type="button"
+      label="Anterior"
+      (click)="previousPage()"
+      class="ui-button-danger"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Próximo"
+      (click)="nextPage()"
+      class="ui-button-danger"
+    ></button>
+  </div>
+</div>

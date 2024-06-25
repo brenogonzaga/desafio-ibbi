@@ -1,0 +1,29 @@
+<h3>Histórico de vendas</h3>
+<div class="data-container">
+  <div class="data-wrapper" *ngFor="let sale of salesHistory">
+    <div class="sale-info">
+      <span>Data de venda</span>
+      <p>{{ sale.date }}</p>
+    </div>
+    <div class="sale-info">
+      <span>Horário</span>
+      <p>{{ sale.time }}</p>
+    </div>
+    <div class="sale-info">
+      <span>Descrição do produto</span>
+      <p>{{ sale.description }}</p>
+    </div>
+    <div class="sale-info">
+      <span>Cliente</span>
+      <p>{{ sale.customer }}</p>
+    </div>
+    <div class="sale-info">
+      <span>vendedor</span>
+      <p>{{ sale.seller }}</p>
+    </div>
+    <div class="sale-info">
+      <span>Observação</span>
+      <p>{{ sale.note }}</p>
+    </div>
+  </div>
+</div>

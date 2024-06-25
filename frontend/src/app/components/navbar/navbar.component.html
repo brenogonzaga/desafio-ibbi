@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="navbar-brand link" routerLink="/">IBBI Shop</div>
+  <ul class="navbar-nav">
+    <li class="nav-item ml-5" *ngIf="authService.$user()?.role === 'admin'">
+      <p-dropdown
+        [options]="categoryItems"
+        placeholder="Categorias"
+        [showClear]="true"
+        (onChange)="navigateTo($event.value.routerLink)"
+      ></p-dropdown>
+    </li>
+
+    <li class="nav-item ml-5" *ngIf="authService.$user()?.role === 'admin'">
+      <p-dropdown
+        [options]="productItems"
+        placeholder="Produtos"
+        [showClear]="true"
+        (onChange)="navigateTo($event.value.routerLink)"
+      ></p-dropdown>
+    </li>
+    <li class="nav-item ml-5">
+      <p-button
+        label="Sair"
+        routerLink="/contact"
+        routerLinkActive="active"
+        (onClick)="logout()"
+      ></p-button>
+    </li>
+  </ul>
+</nav>

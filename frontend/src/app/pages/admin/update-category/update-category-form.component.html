@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <p-card header="Crie sua categoria!" class="responsive-card">
+    <div class="text-left">
+      <form [formGroup]="categoryFormData">
+        <label for="description" class="block text-900 font-medium mb-2"
+          >Descrição</label
+        >
+        <input
+          id="description"
+          type="text"
+          placeholder="Nome"
+          pInputText
+          class="w-full mb-3"
+          formControlName="description"
+        />
+
+        <button
+          pButton
+          pRipple
+          label="Atualziar Categoria"
+          class="w-full"
+          (click)="handleUpdateCategory()"
+        ></button>
+      </form>
+    </div>
+  </p-card>
+</div>

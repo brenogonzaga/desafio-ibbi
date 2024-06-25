@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <p-card header="Lista de Categorias" class="responsive-card">
+    <div class="category-cards">
+      <p-card *ngFor="let category of categories" class="category-card">
+        <div class="p-card-title">{{ category.description }}</div>
+        <div class="p-card-footer">
+          <button
+            pButton
+            type="button"
+            label="Atualizar"
+            (click)="updateCategory(category.id)"
+            class="ui-button-danger"
+          ></button>
+          <button
+            pButton
+            type="button"
+            label="Excluir"
+            (click)="deleteCategory(category.id)"
+            class="ui-button-danger"
+          ></button>
+        </div>
+      </p-card>
+    </div>
+  </p-card>
+</div>

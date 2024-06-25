@@ -1,0 +1,47 @@
+.navbar {
+  width: 100%;
+  background-color: #343a40;
+  color: white;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+
+  &.active {
+    font-weight: bold;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+li {
+  display: flex;
+  align-items: center;
+}
+::ng-deep .p-button {
+  padding: 0.5rem 1rem;
+}
+
+:hover .link {
+  cursor: pointer;
+}

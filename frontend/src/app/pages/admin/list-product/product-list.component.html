@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="product-list">
+  <div class="product-card" *ngFor="let product of products">
+    <div class="product-card-header">
+      <h2>{{ product.description }}</h2>
+    </div>
+    <div class="product-card-body">
+      <img
+        [src]="product.image_url"
+        alt="Imagem do Produto"
+        class="product-image"
+      />
+      <div class="product-details">
+        <p><strong>Preço:</strong> R$ {{ product.price }}</p>
+        <p><strong>Quantidade:</strong> {{ product.quantity }}</p>
+        <p>
+          <strong>Alerta de estoque baixo:</strong>
+          {{ product.low_stock_alert }}
+        </p>
+      </div>
+    </div>
+    <div class="product-actions p-5">
+      <button
+        pButton
+        type="button"
+        label="Atualizar"
+        (click)="updateProduct(product.id)"
+        class="ui-button-danger"
+      ></button>
+      <button
+        pButton
+        type="button"
+        label="Deletar"
+        (click)="deleteProduct(product.id)"
+        class="ui-button-danger"
+      ></button>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-controls">
+  <button
+    pButton
+    type="button"
+    label="Anterior"
+    (click)="previousPage()"
+    class="ui-button-danger"
+  ></button>
+  <button
+    pButton
+    type="button"
+    label="Próximo"
+    (click)="nextPage()"
+    class="ui-button-danger"
+  ></button>
+</div>

@@ -1,0 +1,68 @@
+<p-card header="Bem-vindo de volta!" class="responsive-card">
+  <ng-template pTemplate="header">
+    <img alt="Card" src="logo.webp" class="p-2" />
+  </ng-template>
+
+  <div class="text-left">
+    <form [formGroup]="credentialsFormGroup">
+      <label for="username" class="block text-900 font-medium mb-2"
+        >Nome do usuário</label
+      >
+      <input
+        id="username"
+        type="text"
+        placeholder="Nome"
+        pInputText
+        class="w-full mb-3"
+        formControlName="username"
+      />
+
+      <label for="password" class="block text-900 font-medium mb-2"
+        >Senha</label
+      >
+      <p-password
+        [inputStyle]="{ width: '100%' }"
+        [style]="{ width: '100%' }"
+        [feedback]="false"
+        id="password"
+        type="password"
+        placeholder="Senha"
+        [toggleMask]="true"
+        formControlName="password"
+      />
+
+      <div class="flex align-items-center justify-content-between mb-6 mt-3">
+        <div class="flex align-items-center">
+          <p-checkbox
+            id="rememberme"
+            [binary]="true"
+            styleClass="mr-2"
+          ></p-checkbox>
+          <label for="rememberme1">Lembrar</label>
+        </div>
+        <a
+          class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer"
+          routerLinkActive="router-link-active"
+          >Esqueceu sua senha?</a
+        >
+      </div>
+
+      <button
+        pButton
+        pRipple
+        label="Entrar"
+        icon="pi pi-user"
+        class="w-full"
+        (click)="handleLogin()"
+      ></button>
+    </form>
+    <div class="py-3 text-center">
+      <span class="text-600 font-medium line-height-3">Não tem uma conta?</span>
+      <a
+        class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"
+        routerLink="/cadastrar"
+        >Crie agora!</a
+      >
+    </div>
+  </div>
+</p-card>

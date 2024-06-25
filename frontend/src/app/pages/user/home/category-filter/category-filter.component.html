@@ -1,0 +1,22 @@
+<form class="flex gap-2" [formGroup]="filterFormGroup">
+  <p-floatLabel class="w-full">
+    <input
+      pInputText
+      class="w-full"
+      id="product_description_input"
+      aria-describedby="username-help"
+      formControlName="description"
+    />
+    <label for="product_description_input">Produto</label>
+  </p-floatLabel>
+  <p-multiSelect
+    class="custom-multiselect"
+    [options]="getCategoriesNames(availableCategories)"
+    formControlName="categories"
+    placeholder="Categorias"
+    optionLabel="label"
+    display="chip"
+    [showClear]="true"
+  >
+  </p-multiSelect>
+</form>

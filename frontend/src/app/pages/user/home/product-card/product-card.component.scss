@@ -1,0 +1,28 @@
+.product-info {
+  justify-content: space-between;
+}
+
+::ng-deep .p-card-title {
+  margin-bottom: 0;
+}
+
+.stock-container {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.stock-yellow {
+  background-color: #ffdd57;
+  color: #333;
+}
+
+.stock-green {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.stock-red {
+  background-color: #f44336;
+  color: #fff;
+}

@@ -1,0 +1,56 @@
+<p-card
+  header="{{ product.description }}"
+  subheader="{{ product.category.description }}"
+  [style]="{ width: '360px', borderRadius: '10px', height: '500px' }"
+>
+  <ng-template pTemplate="header">
+    <div
+      class="surface-card w-full text-center p-5"
+      style="border-radius: 10px; height: 200px; overflow: hidden"
+    >
+      <img
+        alt="Card"
+        class="w-full h-auto"
+        src="{{ product.image_url }}"
+        style="max-height: 100%"
+      />
+    </div>
+  </ng-template>
+  <div
+    class="product-info flex"
+    style="
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    "
+  >
+    <div class="flex flex-column">
+      <div
+        [ngClass]="{
+          'stock-container': true,
+          'stock-yellow': product.stock_status === 'YELLOW',
+          'stock-green': product.stock_status === 'GREEN',
+          'stock-red': product.stock_status === 'RED'
+        }"
+      >
+        <span>Em estoque {{ product.quantity }}</span>
+      </div>
+    </div>
+    <div class="flex justify-content-between mt-3">
+      <span class="font-bold">R$ {{ product.price }}</span>
+      <span>$ {{ roundUSDPrice(product.price_usd) }}</span>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <div class="flex gap-3" style="margin-top: auto">
+      <p-button
+        label="Comprar"
+        class="w-full"
+        styleClass="w-full"
+        (onClick)="cartService.addProductToCart(product, note)"
+      />
+    </div>
+  </ng-template>
+</p-card>

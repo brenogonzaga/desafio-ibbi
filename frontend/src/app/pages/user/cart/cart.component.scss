@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.products-container {
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+}
+
+.order-container {
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 993px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .products-container {
+    width: 70%;
+  }
+
+  .order-container {
+    width: 28%;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,9 @@
+<h3>Produtos mais vendidos</h3>
+<div id="stats-container">
+  <div *ngFor="let item of productSummary; index as i" class="stat">
+    <div class="bar" [ngStyle]="bars[i]"></div>
+    <div class="item-description">
+      {{ item.description }}
+    </div>
+  </div>
+</div>

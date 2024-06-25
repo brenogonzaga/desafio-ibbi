@@ -1,0 +1,9 @@
+:host {
+  display: grid;
+  grid-template-areas:
+    "sells categories"
+    "products products";
+  height: 100%;
+  grid-gap: 20px;
+  color: white;
+}

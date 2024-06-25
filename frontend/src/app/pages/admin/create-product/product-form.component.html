@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <p-card header="Cadastro de Produto" class="responsive-card">
+    <div class="text-left">
+      <form [formGroup]="productFormGroup" (ngSubmit)="handleCreateProduct()">
+        <label for="description" class="block text-900 font-medium mb-2"
+          >Descrição</label
+        >
+        <input
+          id="description"
+          type="text"
+          placeholder="Descrição do produto"
+          pInputText
+          class="w-full mb-3"
+          formControlName="description"
+        />
+
+        <label for="price" class="block text-900 font-medium mb-2">Preço</label>
+        <input
+          id="price"
+          type="number"
+          placeholder="Preço"
+          pInputText
+          class="w-full mb-3"
+          formControlName="price"
+        />
+
+        <label for="quantity" class="block text-900 font-medium mb-2"
+          >Quantidade</label
+        >
+        <input
+          id="quantity"
+          type="number"
+          placeholder="Quantidade"
+          pInputText
+          class="w-full mb-3"
+          formControlName="quantity"
+        />
+
+        <label for="low_stock_alert" class="block text-900 font-medium mb-2"
+          >Alerta de Estoque Baixo</label
+        >
+        <input
+          id="low_stock_alert"
+          type="number"
+          placeholder="Quantidade para alerta de estoque baixo"
+          pInputText
+          class="w-full mb-3"
+          formControlName="low_stock_alert"
+        />
+
+        <label for="category_id" class="block text-900 font-medium mb-2"
+          >Categoria</label
+        >
+        <p-dropdown
+          [options]="categories"
+          optionLabel="label"
+          placeholder="Selecione uma categoria"
+          [formControl]="categoryControl"
+          class="w-full mb-3"
+        ></p-dropdown>
+
+        <label for="image_url" class="block text-900 font-medium mb-2"
+          >URL da Imagem</label
+        >
+        <input
+          id="image_url"
+          type="text"
+          placeholder="URL da imagem do produto"
+          pInputText
+          class="w-full mb-3"
+          formControlName="image_url"
+        />
+
+        <button
+          pButton
+          pRipple
+          label="Cadastrar Produto"
+          icon="pi pi-check"
+          class="w-full"
+          type="submit"
+        ></button>
+      </form>
+    </div>
+  </p-card>
+</div>

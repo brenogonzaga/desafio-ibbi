@@ -1,0 +1,31 @@
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+html,
+body,
+app-root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeded;
+}
+
+app-root,
+admin-root,
+user-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+}
