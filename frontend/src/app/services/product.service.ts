@@ -35,16 +35,16 @@ export class ProductService {
     return this.http.get<Product[]>(this.url, { params });
   }
 
-  getProduct(id: number) {
-    return this.http.get(`${this.url}/${id}`);
+  getProductById(id: number) {
+    return this.http.get(`${this.url_admin}/${id}`);
   }
 
   createProduct(product: any) {
-    return this.http.post(this.url, product);
+    return this.http.post(this.url_admin, product);
   }
 
   updateProduct(product: any) {
-    return this.http.put(`${this.url}/${product.id}`, product);
+    return this.http.put(`${this.url_admin}/${product.id}`, product);
   }
 
   deleteProduct(id: number) {

@@ -53,7 +53,7 @@ export class CategoryFormComponent {
         this.router.navigate(['/admin']);
       },
       error: (error) => {
-        // Handle error, show error message
+        // Handle error
       },
     });
   }

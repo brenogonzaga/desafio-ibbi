@@ -15,7 +15,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 
 @Component({
-  selector: 'update-category',
+  selector: 'update-category-form',
   standalone: true,
   imports: [
     CheckboxModule,
@@ -73,7 +73,6 @@ export class UpdateCategoryFormComponent implements OnInit {
     if (this.categoryId) {
       const categoryIdNumber = Number(this.categoryId);
 
-      console.log(categoryData, categoryIdNumber);
       this.categoryService
         .updateCategory(categoryIdNumber, categoryData)
         .subscribe({

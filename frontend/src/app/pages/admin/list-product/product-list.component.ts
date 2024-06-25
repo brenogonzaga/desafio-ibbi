@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '@root/app/services/product.service';
 import { Product } from '@root/app/models/product';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -33,7 +33,7 @@ export class ProductListComponent implements OnInit {
   skip: number = 0;
   limit: number = 10;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router) {}
 
   ngOnInit() {
     this.loadProducts();
@@ -68,5 +68,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  updateProduct(productId: number) {}
+  updateProduct(productId: number) {
+    this.router.navigate([`/admin/product/update/${productId}`]);
+  }
 }

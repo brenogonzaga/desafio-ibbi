@@ -200,6 +200,11 @@ O arquivo XML para importação no draw.io (app.diagrams.net): [MER.xml](./docs/
    - **Usuário:** ibbi_admin
    - **Senha:** ibbi_password
 
+   Será também criado um usuário com as seguintes credenciais:
+
+   - **Usuário:** user1
+   - **Senha:** user1_password
+
    Também serão criadas algumas seeds para testes.
 
    <p align="center">

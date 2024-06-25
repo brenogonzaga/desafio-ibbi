@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { catchError, map, of, switchMap } from 'rxjs';
 
-export const authGuard = (expectedRole: string) => {
+export const authGuard = (expectedRoles: string[]) => {
   const router = inject(Router);
   const authService = inject(AuthService);
   let token = localStorage.getItem('access_token');
@@ -26,7 +26,7 @@ export const authGuard = (expectedRole: string) => {
 
   return authService.validateToken(token).pipe(
     switchMap((user) => {
-      if (user.role === expectedRole) {
+      if (expectedRoles.includes(user.role)) {
         return of(true);
       } else {
         const homePageForRole = getHomePageForRole(user.role);

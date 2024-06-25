@@ -7,7 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 
 @Component({
-  selector: 'app-category-list',
+  selector: 'category-list',
   standalone: true,
   imports: [
     CardModule,

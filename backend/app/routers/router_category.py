@@ -15,13 +15,13 @@ def read_categories(skip: int = 0, limit: int = 100, db: Session = Depends(datab
     return categories
 
 
-@router.get("/categories/{category_id}", response_model=List[CategoryResponseNoProduct], status_code=status.HTTP_200_OK)
+@router.get("/categories/{category_id}", response_model=CategoryResponseNoProduct, status_code=status.HTTP_200_OK)
 def read_categories_by_id(category_id: int, db: Session = Depends(database.get_db)):
     category = service_category.read_by_id(db, category_id)
-    return category
+    return category  # Wrap the category object in a list
 
 
-@router.post("/admin/categories", response_model=CategoryResponse,  status_code=status.HTTP_201_CREATED)
+@ router.post("/admin/categories", response_model=CategoryResponse,  status_code=status.HTTP_201_CREATED)
 def create_category(category: CategoryCreate, db: Session = Depends(database.get_db)):
     db_category = service_category.read_by_descryption(
         db, category.description)
@@ -31,7 +31,7 @@ def create_category(category: CategoryCreate, db: Session = Depends(database.get
     return db_category
 
 
-@router.put("/admin/categories/{category_id}", response_model=CategoryCreate, status_code=status.HTTP_200_OK)
+@ router.put("/admin/categories/{category_id}", response_model=CategoryCreate, status_code=status.HTTP_200_OK)
 def update_category(category_id: int, category: CategoryUpdate, db: Session = Depends(database.get_db)):
     updated_category = service_category.update(db, category_id, category)
     if updated_category is None:
@@ -39,7 +39,7 @@ def update_category(category_id: int, category: CategoryUpdate, db: Session = De
     return updated_category
 
 
-@router.delete("/admin/categories/{category_id}", status_code=status.HTTP_204_NO_CONTENT)
+@ router.delete("/admin/categories/{category_id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_category(category_id: int, db: Session = Depends(database.get_db)):
     success = service_category.delete(db, category_id)
     if not success:
